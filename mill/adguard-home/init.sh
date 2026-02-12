@@ -1,4 +1,4 @@
-source /opt/purrbrews-infra/.env
+export /opt/purrbrews-infra/.env
 mkdir ${DATA_DIR}/adguardHome
 mkdir ${DATA_DIR}/adguardHome/data
 mkdir ${DATA_DIR}/adguardHome/conf
