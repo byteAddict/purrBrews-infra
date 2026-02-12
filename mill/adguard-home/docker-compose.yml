@@ -1,0 +1,18 @@
+services:
+  adguard-home:
+    image: adguard/adguardhome:latest
+    container_name: adguard-home
+    network_mode: host
+    volumes:
+      - ${DATA_DIR}/adguardHome/data:/opt/adguardhome/work
+      - ${DATA_DIR}/adguardHome/conf:/opt/adguardhome/conf
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=Asia/Kolkata
+    cpu_shares: 2048
+    oom_score_adj: -1000
+    mem_limit: 512m
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN                   
+      - NET_RAW                     
