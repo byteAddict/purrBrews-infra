@@ -1,0 +1,27 @@
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - DOMAIN=https://vault.purrbrews.cc
+      - SIGNUPS_ALLOWED=false
+      - INVITATIONS_ALLOWED=true
+      - ADMIN_TOKEN=${ADMIN_TOKEN:?err_no_token}
+      - LOG_LEVEL=info
+      - TZ=Asia/Kolkata
+    ports:
+      - "8081:80" 
+    volumes:
+      - ${DATA_DIR:?err_no_path}/vw-data:/data
+    networks:
+      - vaultwarden-network
+    cpu_shares: 1024
+    oom_score_adj: -500 
+
+networks:
+  vaultwarden-network:
+    driver: bridge
