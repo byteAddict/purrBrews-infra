@@ -1,0 +1,14 @@
+services:
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    cpu_shares: 1024
+    oom_score_adj: -500
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+    command: tunnel --no-autoupdate run
