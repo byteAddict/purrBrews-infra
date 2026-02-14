@@ -4,10 +4,10 @@ services:
     container_name: cloudflared
     restart: unless-stopped
     volumes:
-      - ./config:/etc/cloudflared:ro
+      - ./config:/config:ro
       - /etc/localtime:/etc/localtime:ro
-      - ${SECRETS_DIR}/cloudflared:/secrets:ro
+      - ${SECRETS_DIR}/cloudflared:/etc/cloudflared:ro
     environment:
       - TZ=Asia/Kolkata
       - LOG_LEVEL=info
-    command: tunnel --config /etc/cloudflared/config.yml run
+    command: tunnel --config /config/config.yml run
