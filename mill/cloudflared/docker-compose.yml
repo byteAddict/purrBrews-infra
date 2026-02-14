@@ -8,4 +8,6 @@ services:
       - ${SECRETS_DIR}/cloudflared:/home/nonroot/secrets:ro
     environment:
       - TZ=Asia/Kolkata
+      - LOG_LEVEL=info
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
     command: tunnel --config /home/nonroot/.cloudflare/config.yaml run
