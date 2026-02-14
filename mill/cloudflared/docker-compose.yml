@@ -4,7 +4,7 @@ services:
     container_name: cloudflared
     restart: unless-stopped
     volumes:
-      - config/cloudflared:/etc/cloudflared:ro
+      - ./config:/etc/cloudflared:ro
       - /etc/localtime:/etc/localtime:ro
       - ${SECRETS_DIR}/cloudflared:/secrets:ro
     environment:
