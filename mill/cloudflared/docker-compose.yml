@@ -10,4 +10,4 @@ services:
     environment:
       - TZ=Asia/Kolkata
       - LOG_LEVEL=info
-    command: tunnel --config /etc/cloudflared/config.yaml run
+    command: tunnel --config /etc/cloudflared/config.yml run
