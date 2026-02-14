@@ -9,5 +9,4 @@ services:
     environment:
       - TZ=Asia/Kolkata
       - LOG_LEVEL=info
-      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
     command: tunnel --config /home/nonroot/.cloudflare/config.yaml run

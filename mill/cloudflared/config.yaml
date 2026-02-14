@@ -1,5 +1,5 @@
-tunnel: <CLOUDFLARE_TUNNEL_TOKEN>
-credentials-file: /home/nonroot/secrets/<CLOUDFLARE_TUNNEL_TOKEN>.json
+tunnel: <CLOUDFLARE_TUNNEL_ID>
+credentials-file: /home/nonroot/secrets/<CLOUDFLARE_TUNNEL_ID>.json
 
 ingress:
   # Pillar 1: Vaultwarden (Silo)
