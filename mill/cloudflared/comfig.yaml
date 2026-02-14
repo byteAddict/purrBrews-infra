@@ -4,11 +4,11 @@ credentials-file: /home/nonroot/secrets/${CLOUDFLARE_TUNNEL_ID}.json
 ingress:
   # Pillar 1: Vaultwarden (Silo)
   - hostname: vault.purrbrews.cc
-    service: http://192.168.0.10:8081
+    service: http://192.168.0.11:8081
 
   # Pillar 2: AdGuard Home (Mill) - For remote admin access
   - hostname: dns.purrbrews.cc
-    service: http://192.168.0.11:3000
+    service: http://192.168.0.10:3000
 
   # Catch-all: 404 for any unauthorized subdomains
   - service: http_status:404
