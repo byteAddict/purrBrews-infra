@@ -6,7 +6,7 @@ services:
     volumes:
       - ./config:/config:ro
       - /etc/localtime:/etc/localtime:ro
-      - ${SECRETS_DIR}/cloudflared:/etc/cloudflared:ro
+      - ${SECRETS_DIR}/cloudflared/${CLOUDFLARE_TUNNEL_ID}.json:/etc/cloudflared/credentials.json:ro
     environment:
       - TZ=Asia/Kolkata
       - LOG_LEVEL=info
