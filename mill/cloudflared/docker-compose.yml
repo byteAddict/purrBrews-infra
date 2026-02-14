@@ -10,4 +10,5 @@ services:
     environment:
       - TZ=Asia/Kolkata
       - LOG_LEVEL=info
+      - CLOUDFLARE_TUNNEL_ID=${CLOUDFLARE_TUNNEL_ID}
     command: tunnel --config /config/config.yml run

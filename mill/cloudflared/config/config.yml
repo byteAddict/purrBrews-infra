@@ -1,4 +1,4 @@
-tunnel: <CLOUDFLARE_TUNNEL_ID>
+tunnel: CLOUDFLARE_TUNNEL_ID>
 credentials-file: /secrets/<CLOUDFLARE_TUNNEL_ID>.json
 
 ingress:
