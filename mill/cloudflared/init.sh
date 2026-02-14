@@ -14,3 +14,6 @@ mkdir -p "${DATA_DIR}/cloudflared"
 docker compose --env-file /opt/purrbrews-infra/.env -f /opt/purrbrews-infra/mill/cloudflared/docker-compose.yml up -d
 
 echo "Cloudflared tunnel ${CLOUDFLARE_TUNNEL_ID} is now active."
+
+# Note: To manage DNS: 
+#docker run -it --rm -v $SECRETS_DIR/cloudflared:/etc/cloudflared   cloudflare/cloudflared:latest tunnel route dns $CLOUDFLARE_TUNNEL_ID service.purrbrews.cc
